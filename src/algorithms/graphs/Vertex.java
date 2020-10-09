@@ -1,4 +1,4 @@
-package alghoritms.graphs;
+package algorithms.graphs;
 
 public class Vertex<T> {
 

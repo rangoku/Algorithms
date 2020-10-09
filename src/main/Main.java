@@ -1,9 +1,9 @@
 package main;
 
-import alghoritms.graphs.*;
-import alghoritms.graphs.search.BreadthFirstSearch;
-import alghoritms.graphs.search.DepthFirstSearch;
-import alghoritms.sorts.BubbleSort;
+import algorithms.graphs.*;
+import algorithms.sorts.BubbleSort;
+import algorithms.sorts.CombSort;
+import algorithms.sorts.QuickSort;
 
 import java.util.Arrays;
 
@@ -11,47 +11,21 @@ public class Main {
 
     public static void main(String[] args) {
 
-        double[] w = {10, 20, 30};
-        double[] v = {60, 1, 120};
+        Integer[] a1 = {12,3,4,100,5,6,5,4,3,3,4,4,5,5,6,7,7,78,7,6,5,3,23,2,3};
+        Integer[] a2 = {12,3,4,100,5,6,5,4,3,3,4,4,5,5,6,7,7,78,7,6,5,3,23,2,3};
 
-        Graph<Integer> graph = new Graph<>(7);
+        System.out.println("Original array:");
+        System.out.println(Arrays.toString(a1));
 
+        long durationOfCombSort = Profiler.profile(() -> CombSort.sort(a1));
+        long durationOfQSort = Profiler.profile(() -> QuickSort.sort(a2));
 
-        Vertex<Integer> v0 = new Vertex<>(0, 1);
-        Vertex<Integer> v1 = new Vertex<>(1, 10);
-        Vertex<Integer> v2 = new Vertex<>(2, 20);
-        Vertex<Integer> v3 = new Vertex<>(3, 30);
-        Vertex<Integer> v4 = new Vertex<>(4, 40);
-        Vertex<Integer> v5 = new Vertex<>(5, 50);
-        Vertex<Integer> v6 = new Vertex<>(6, 60);
+        System.out.println("Sorted array:");
+        System.out.println(Arrays.toString(a1));
+        System.out.println(Arrays.toString(a2));
 
-        graph.addEdge(v0, v1);
-        graph.addEdge(v0, v2);
-        graph.addEdge(v2, v3);
-        graph.addEdge(v2, v4);
-        graph.addEdge(v1, v3);
-        graph.addEdge(v4, v5);
-        graph.addEdge(v0, v5);
-        graph.addEdge(v0, v6);
-        graph.addEdge(v6, v4);
-       // graph.addEdge(v3, v4);
+        System.out.println("CombSort: " + durationOfCombSort + "ms");
+        System.out.println("QSort: " + durationOfQSort + "ms");
 
-        System.out.println(graph.isBipartite(v0));
-
-    //    graph.print();
-  //      System.out.println();
-//
-  //    DepthFirstSearch<Integer> depthFirstSearch = new DepthFirstSearch<>(graph, v0);
-//
-//        System.out.println(depthFirstSearch.getPathTo(v2));
-//        System.out.println(depthFirstSearch.getPathTo(v2));
-//        System.out.println(depthFirstSearch.getPathTo(v2));
-//       // System.out.println("61 = " + depthFirstSearch.getSum());
-//
-//        BreadthFirstSearch<Integer> breadthFirstSearch = new BreadthFirstSearch<>(graph, v0);
-//        System.out.println();
-//        System.out.println(breadthFirstSearch.getShortestPath(v0, v2));
-//        System.out.println(breadthFirstSearch.getShortestPath(v0, v3));
-//        System.out.println(breadthFirstSearch.getShortestPath(v1, v0));
     }
 }

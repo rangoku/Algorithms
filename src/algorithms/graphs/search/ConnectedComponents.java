@@ -1,7 +1,7 @@
-package alghoritms.graphs.search;
+package algorithms.graphs.search;
 
-import alghoritms.graphs.Graph;
-import alghoritms.graphs.Vertex;
+import algorithms.graphs.Graph;
+import algorithms.graphs.Vertex;
 
 public class ConnectedComponents<T> {
 

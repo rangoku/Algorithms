@@ -1,10 +1,8 @@
-package alghoritms.graphs.search;
+package algorithms.graphs.search;
 
-import alghoritms.graphs.Graph;
-import alghoritms.graphs.Vertex;
+import algorithms.graphs.Graph;
+import algorithms.graphs.Vertex;
 
-import java.util.Collections;
-import java.util.LinkedList;
 import java.util.Stack;
 
 /**

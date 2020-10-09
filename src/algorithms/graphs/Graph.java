@@ -1,20 +1,13 @@
-package alghoritms.graphs;
+package algorithms.graphs;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
 import java.util.LinkedList;
 
 /**
  * Undirected graph API:
  *
- * never do like that -> graph.addEdge(new Vertex<T>(index, value), new Vertex<T>(index, value));
- * you should previously create an object of Vertex and then use it to connect with new Vertexes
- * if you don't mind, wait for data leak
- *
  * @param <T> is type of storage value
  *
  */
-
 public class Graph<T> {
 
     /**
@@ -115,7 +108,7 @@ public class Graph<T> {
 
     /**
      * Used for divide Graph into 2 sets
-     * @see alghoritms.graphs.search.DepthFirstSearch
+     * @see algorithms.graphs.search.DepthFirstSearch
      */
     private void dfs(Graph<T> G, int v_index) {
         visited[v_index] = true;
