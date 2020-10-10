@@ -4,28 +4,32 @@ import org.jetbrains.annotations.NotNull;
 
 public class CombSort {
 
-    private static final double FACTOR = 1.24733095010;
+    private static final double FACTOR = 1.247330;
 
     private static <E extends Comparable<? super E>>
     void combSort(E[] a) {
 
-        double step = a.length - 1;
+        int step = a.length;
+        boolean swapped = true;
 
-        while (step >= 1) {
+        while (step > 1 || swapped) {
 
-            for (int i = 0; i + step < a.length; i++) {
+            if (step > 1)
+                step = (int)(step / FACTOR);
 
-                if (a[i].compareTo(a[(int)(i + step)]) > 0) {
+            swapped = false;
+            int i = 0;
+            while (i + step < a.length) {
+
+                if (a[i].compareTo(a[i + step]) > 0) {
                     E temp = a[i];
-                    a[i] = a[(int)(i + step)];
-                    a[(int)(i + step)] = temp;
+                    a[i] = a[i + step];
+                    a[i + step] = temp;
+                    swapped = true;
                 }
+                ++i;
             }
-            step /= FACTOR;
         }
-
-        BubbleSort.sort(a);
-
     }
 
     public static <E extends Comparable<? super E>>
