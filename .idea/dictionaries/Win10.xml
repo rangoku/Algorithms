@@ -1,8 +1,10 @@
 <component name="ProjectDictionaryState">
   <dictionary name="Win10">
     <words>
+      <w>csort</w>
       <w>heapify</w>
       <w>hsort</w>
+      <w>psort</w>
       <w>qsort</w>
     </words>
   </dictionary>
